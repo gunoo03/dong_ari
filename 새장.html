@@ -32,8 +32,34 @@
 </head>
 <body>
     <div id="b"><img src="back.png" width="1481" height="746"></div>
-    <div id=iron1><img src="철창.png" width="200px"></div>
-    <div id=iron2><img src="철창.png" width="200px"></div>
-    <div id=iron3><img src="철창.png" width="200px"></div>
+    <div id=iron1><img src="철창.png" width="200px" onclick="iron1()"></div>
+    <div id=iron2><img src="철창.png" width="200px" onclick="iron2()"></div>
+    <div id=iron3><img src="철창.png" width="200px" onclick="iron3()"></div>
 </body>
+<script>
+    function iron1() {
+        if(localStorage.getItem('bottle') === '흰빨노') {
+            alert("1")
+        }
+        else {
+
+        }
+    }
+    function iron2() {
+        if (localStorage.getItem('bottle') === '빨파') {
+            alert("2")
+        }
+        else {
+
+        }
+    }
+    function iron3() {
+        if (localStorage.getItem('bottle') === '흰파노') {
+            alert("3")
+        }
+        else {
+
+        }
+    }
+</script>
 </html>
