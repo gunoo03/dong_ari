@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아쿠아리움</title>
+    <style>
+        #yeswater{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+        }
+    </style>
+</head>
+<script>
+    document.getElementById("key").style.display = "none"
+    document.getElementById("yeswater").style.display = "block"
+    document.getElementById("nowater").style.display = "none"
+    let pipe = localStorage.getItem('pipe');
+    if(pipe==1){
+        document.getElementById("nowater").style.display = "block"
+        document.getElementById("yeswater").style.display = "none"
+    }
+    else{
+        document.getElementById("nowater").style.display = "none"
+        document.getElementById("yeswater").style.display = "block"
+    }
+    let keyaqua = 0
+    function keyaqua() {
+        keyaqua= 1
+        localStorage.setItem('keyaqua', keyaqua);
+    }
+</script>
+<body>
+    <div id="yeswater"><img src="아쿠아리움사진" width="1481" height="746"></div>
+    <div id="nowater"><img src="아쿠아리움사진" width="1481" height="746"></div>
+    <div><img src="키사진" width="100" onclick="keyaqua()"></div>
+</body>
+</html>

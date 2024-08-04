@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복도</title>
+    <style>
+        #one{
+            position: absolute;
+            left: 219px;
+            top: 4px;/*괴물 1번 상태*/
+        }
+        #two{
+            position: absolute;
+            left: 219px;
+            top: 4px;
+            /*괴물 2번 상태*/
+        }
+        #three{
+            position: absolute;
+            left: 219px;
+            top: 4px;
+            /*괴물 3번 상태*/
+        }
+        #four{
+            position: absolute;
+            left: 219px;
+            top: 4px;
+            /*괴물 4번 상태*/
+        }
+        #five{
+            position: absolute;
+            left: 219px;
+            top: 4px;
+             /*괴물 5번 상태*/
+        }
+        #jumps{
+            position: absolute;
+            left: 219px;
+            top: 4px;
+             /*점스 상태*/
+        }
+        #password{
+            position: absolute;
+            left: 219px;
+            top: 4px;
+             /*입력칸*/
+        }
+        #inputpwbt{
+            position: absolute;
+            left: 400px;
+            top: 4px;
+             /*입력칸버튼*/
+        }
+    </style>
+</head>
+<body>
+    <div id=one><img src="baqui.jpg" width="100";></div>
+    <div id=two><img src="baqui.jpg" width="200";></div>
+    <div id=three><img src="baqui.jpg" width="300";></div>
+    <div id=four><img src="baqui.jpg" width="400";></div>
+    <div id=five><img src="baqui.jpg" width="500";></div> 
+    <input id=password autofocus type='text' pattern="\d*" maxlength='4' id="password">
+    <input id=inputpwbt type="button" onclick="test()" value="내려가기">
+    <div id="jumps"><video width="100" height="100"><source src="" type="video/mp4"></video></div>
+</body>
+<script>
+const video = document.getElementById('jumps');
+function test() {
+    var p = document.getElementById('password').value
+    if( p === '1523' ) { //비번
+        window.location.replace('복도2.html')
+          } 
+    else{
+        document.getElementById("jumps").style.display = "block"
+        playVideo();
+          }
+}
+function playVideo() {
+    var video2 = document.getElementById('jumps');
+    video2.volume = 1.0;
+    video2.play().catch(function(error) {
+        console.log('Video playback failed:', error);
+    });
+    
+    // 1초 후 비디오 일시 정지
+    setTimeout(function () {
+        video2.pause();
+    }, 1000);
+}
+document.getElementById("one").style.display = "none";
+document.getElementById("two").style.display = "none";
+document.getElementById("three").style.display = "none";
+document.getElementById("four").style.display = "none";
+document.getElementById("five").style.display = "none";
+document.getElementById("jumps").style.display = "none";
+alert("dkdk")
+setTimeout(() => document.getElementById("one").style.display = "block", 1000);
+setTimeout(() => document.getElementById("two").style.display = "block", 2000);
+setTimeout(() => document.getElementById("one").style.display = "none", 2000);
+setTimeout(() => document.getElementById("three").style.display = "block", 3000);
+setTimeout(() => document.getElementById("two").style.display = "none", 3000);
+setTimeout(() => document.getElementById("four").style.display = "block", 4000);
+setTimeout(() => document.getElementById("three").style.display = "none", 4000);
+setTimeout(() => document.getElementById("five").style.display = "block", 5000);
+setTimeout(() => document.getElementById("four").style.display = "none", 5000);
+setTimeout(() => document.getElementById("jumps").style.display = "block", 6000);
+setTimeout(() => document.getElementById("five").style.display = "none", 6000);
+setTimeout(() => playVideo(), 6000);
+</script>
+</html>

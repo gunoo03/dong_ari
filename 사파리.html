@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" sizes="32x32">
+    <title>사파리</title>
+    <style>
+        #b{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+        }
+        #a{
+            position: fixed;
+            left: 20px;
+            top: 300px; /*왼화 위치 지정*/
+        }
+        .one img {
+            transition: all 0.2s linear;
+        }
+        .one:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<script>
+    let pipe = 0
+    function pipe() {
+        pipe= 1
+        localStorage.setItem('pipe', pipe);
+    }
+</script>
+<body>
+    <div id="a"><a href="식물원2.html" class="one"><img src="왼화.png" width="100" height="100"></a></div>
+    <!-- <div id="b"><img src="사파리사진" width="1481" height="746"></div> -->
+    <div><img src="pipe.png" width="100" onclick="pipe()"></div>
+</body>
+</html>

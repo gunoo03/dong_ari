@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<script>
+const yellowfu = (() => {
+            let yellowv = 0;
+            
+            return function() {
+                yellowv = yellowv + 1;
+                if (yellowv > 1) {
+                    alert("s");
+                }
+            };
+        })();
+</script>
+<body>
+    <button onclick="yellowfu()">노랑</button>
+</body>
+</html>

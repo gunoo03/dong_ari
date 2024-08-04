@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인벤</title>
+    <style>
+        #container{
+            position: relative;
+            left: 0px;
+            top: -200px;
+        }
+        .container {
+            width: 1520px;
+            height: 200px;
+            background: gold;
+        }
+        .string{
+            position: relative;
+            left: 0px;
+            top: -200px;
+        }
+        #inv {
+            width: 1520px;
+            height: 200px;
+            }
+        input[id="string"] {
+            display: none;
+        }
+        input[id="string"] + label {
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            cursor: pointer;
+            transition: all, 0.5s;
+        }
+        input[id="string"]:checked + label {
+            transform: translateY(200px);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="string">
+    <label for="string">
+        <span><div class="container" id=container><a href="#"><img src="inv.png" id="inv"></a></div></span>
+        <span><img src="string.png" class="string"></span>
+    </label>
+</body>
+</html>

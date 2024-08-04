@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식물원</title>
+    <style>
+        #b{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+        }
+        #a{
+            position: fixed;
+            left: 20px;
+            top: 300px; /*왼화 위치 지정*/
+        }
+        #c{
+            position: fixed;
+            left: 1350px;
+            top: 300px; /*오른화 위치 지정*/
+        }
+        #d{
+            position: fixed;
+            left: 700px;
+            top: 20px; /*위화 위치 지정*/
+        }
+        .one img {
+            transition: all 0.2s linear;
+        }
+        .one:hover img {
+            transform: scale(1.1);
+        }
+        #red{
+            position: fixed;
+            left: 300px;
+            top: 20px; /*빨꽃 위치 지정*/
+        }
+        #blue{
+            position: fixed;
+            left: 100px;
+            top: 20px; /*파꽃 위치 지정*/
+        }
+        #yellow{
+            position: fixed;
+            left: 500px;
+            top: 20px; /*노꽃 위치 지정*/
+        }
+        #white{
+            position: fixed;
+            left: 700px;
+            top: 20px; /*흰꽃 위치 지정*/
+        }
+    </style>
+</head>
+<script>
+    let keyaqua = localStorage.getItem('keyaqua');
+    if(keyaqua==1){
+        //문보이기
+    }
+    let yellowv = 0;
+    let redv = 0;
+    let bluev = 0;
+    let whitev = 0;
+    function yellowfu() {
+            yellowv += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("무")//무
+                        }
+                        else{
+                            alert("노")//노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //파랑
+                        }
+                        else{
+                            //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            // 빨
+                        }
+                        else{
+                            //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //빨파
+                        }
+                        else{
+                            //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("흰")//흰
+                        }
+                        else{
+                            //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰파
+                        }
+                        else{
+                            //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            //흰빨
+                        }
+                        else{
+                            //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰빨파
+                        }
+                        else{
+                            //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+    function redfu() {
+            redv += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("무")//무
+                        }
+                        else{
+                            alert("노")//노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //파랑
+                        }
+                        else{
+                            //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            // 빨
+                        }
+                        else{
+                            //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //빨파
+                        }
+                        else{
+                            //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("흰")//흰
+                        }
+                        else{
+                            //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰파
+                        }
+                        else{
+                            //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            //흰빨
+                        }
+                        else{
+                            //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰빨파
+                        }
+                        else{
+                            //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+    function bluefu() {
+            bluev += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("무")//무
+                        }
+                        else{
+                            alert("노")//노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //파랑
+                        }
+                        else{
+                            //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            // 빨
+                        }
+                        else{
+                            //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //빨파
+                        }
+                        else{
+                            //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("흰")//흰
+                        }
+                        else{
+                            //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰파
+                        }
+                        else{
+                            //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            //흰빨
+                        }
+                        else{
+                            //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰빨파
+                        }
+                        else{
+                            //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+    function whitefu() {
+            whitev += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("무")//무
+                        }
+                        else{
+                            alert("노")//노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //파랑
+                        }
+                        else{
+                            //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            // 빨
+                        }
+                        else{
+                            //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //빨파
+                        }
+                        else{
+                            //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            alert("흰")//흰
+                        }
+                        else{
+                            //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰파
+                        }
+                        else{
+                            //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            //흰빨
+                        }
+                        else{
+                            //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            //흰빨파
+                        }
+                        else{
+                            //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+</script>
+<body>
+    <div id="b"><img src="우물.png" width="1481" height="746"></div>
+    <div id="a">새장<a href="새장.html" class="one"><img src="왼화.png" width="100" height="100"></a></div>
+    <div id="c">사파리<a href="사파리.html" class="one"><img src="오른화.png" width="100" height="100"></a></div>
+    <div id="d">아쿠아리움<a href="아쿠아리움.html" class="one"><img src="위화.png" width="100" height="100"></a></div>
+    <div id="red"><img src="redf.png" width="100" height="100" onclick="redfu()"></a></div>
+    <div id="blue"><img src="bluef.png" width="100" height="100" onclick="bluefu()"></a></div>
+    <div id="yellow"><img src="yellowf.png" width="100" height="100" onclick="yellowfu()"></a></div>
+    <div id="white"><img src="whitef.png" width="100" height="100" onclick="whitefu()"></a></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #one{
+        position: fixed;
+        left: 620px;
+        top: 300px;
+        width: 200px;
+        height: 200px;}
+        #b{
+            position: fixed;
+            left: 0px;
+            top: 0px;}
+    </style>
+</head>
+<body>
+    <div id="b"><img src="back.jpg" width="1481" height="746"></div>
+    <div id="one"><img src="baqui.jpg"></div>
+    let arr = ["back.jpg", "dark.jpg", "item.png"]; //배열에 경로에 있는 이미지들의 배열을 넣음
+    let cnt = 0; //next 누를때마다 0,1,2 ...번방에 갈 카운트 넣어줌
+    function a(){
+        document.img1.src = "../img/"+arr[cnt%3]; 
+        // documnet.이미지객체이름. cnt%3 -> 0,1,2만 반복되도록. 
+        // 존재하지 않는 방으로 넘어가지 않게 모드로 제어해줌
+        cnt++;
+    }
+    
+    //페이지 로드 되자마자 
+    window.onload= function(){
+        a();
+    }
+    <img name = "img1" src = "../img/daum.png"> <!-- 이미지 태그 이름 img2 --> 
+    <input type = "button" value = "next" onclick="a()">
+</body>
+</html>
