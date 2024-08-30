@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배드엔딩</title>
+    <style>
+        #restart2 {
+            position: fixed;
+            left: 20px;
+            top: 170px;
+            display: none;
+        }
+        #first1 {
+            position: fixed;
+            left: 100px;
+            top: 170px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+    <input id="restart2" type="button" onclick="location.href='식물원2.html'" value="다시하기">
+    <input id="first1" type="button" onclick="location.href='오프닝.html'" value="처음부터">
+
+    <script>
+        const contentDiv = document.getElementById("content");
+        const restartButton = document.getElementById("restart2");
+        const first1Button = document.getElementById("first1");
+
+        setTimeout(() => {
+            contentDiv.innerHTML = "그는 열쇠를 얻어 탈출했습니다.<br>";
+        }, 1000);
+
+        setTimeout(() => {
+            contentDiv.innerHTML += "그러나 동물원에는 거울이 없었고 당연히 그는 자신의 모습을 보지 못했습니다.<br>";
+        }, 2500);
+
+        setTimeout(() => {
+            contentDiv.innerHTML += "복도에서 마주친 괴물이 뿜어내는 가스를 마신 그는 동물원의 괴물들과 똑같은 모습이 되어있었습니다.<br>";
+        }, 4500);
+
+        setTimeout(() => {
+            contentDiv.innerHTML += "끔찍한 모습의 그는 사회에서 거절당하고 외롭게 죽었습니다..<br>";
+        }, 6500);
+
+        setTimeout(() => {
+            contentDiv.innerHTML += "<h1>배드엔딩</h1><br>";
+        }, 8500);
+
+        setTimeout(() => {
+            restartButton.style.display = "block";
+        }, 8500);
+
+        setTimeout(() => {
+            first1Button.style.display = "block";
+        }, 8500);
+    </script>
+</body>
+</html>

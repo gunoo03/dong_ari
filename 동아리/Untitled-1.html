@@ -1,0 +1,37 @@
+<script>
+let count = 0;
+const intervalId = setInterval(function() {
+    count++;
+    console.log("카운트: " + count);
+    if (count >= 5) {
+        clearInterval(intervalId);
+    }
+}, 1000); // 1초마다 실행
+if (count =1) {
+    alert('예아');
+}
+if (count =2) {
+    alert('예아2');
+}
+if (count =3) {
+    alert('예아3');
+}
+if (count =4) {
+    alert('예아4');
+}
+</script>
+function playVideo() {
+    var video2 = document.getElementById('myVideo');
+    video2.volume = 1.0;
+    video2.play().catch(function(error) {
+        console.log('Video playback failed:', error);
+    });
+    
+    // 1초 후 비디오 일시 정지
+    setTimeout(function () {
+        video2.pause();
+    }, 1000);
+}
+
+
+playVideo();

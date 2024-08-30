@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새장</title>
+    <style>
+        #b{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+        }
+        #iron2{
+            position: absolute;
+            left: 600px;
+            top: 210px;
+             /*철창2위치*/
+        }
+        #iron1{
+            position: absolute;
+            left: 250px;
+            top: 210px;
+             /*철창3위치*/
+        }
+        #iron3{
+            position: absolute;
+            left: 950px;
+            top: 210px;
+             /*철창1위치*/
+        }
+        #iron4{
+            position: absolute;
+            left: 250px;
+            top: 510px;
+             /*철창1위치*/
+        }
+        #c{
+            position: fixed;
+            left: 1350px;
+            top: 300px; /*오른화 위치 지정*/
+        }
+        .one img {
+            transition: all 0.2s linear;
+        }
+        .one:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="b"><img src="back.png" width="1600" height="740"></div>
+    <div id=iron3><img src="철창.png" width="200px" onclick="iron3()"></div>
+    <div id=iron2><img src="철창.png" width="200px" onclick="iron2()"></div>
+    <div id=iron1><img src="철창.png" width="200px" onclick="iron1()"></div>
+    <div id=iron4><img src="철창.png" width="1000px" height="200px" onclick="hiddenend()"></div>
+    <div id="c">식물원<a href="식물원2.html" class="one"><img src="오른화.png" width="100" height="100"></a></div>
+</body>
+<script>
+    let water = localStorage.getItem('bottle')
+    let hiddengv = 0
+    let hiddenbv = 0
+    let hiddenwv = 0
+    function iron1() {
+        if(water === '흰빨노') {
+            alert("1")
+        }
+        else {
+
+        }
+    }
+    function iron2() {
+        if (water === '빨파') {
+            alert("2")
+        }
+        else {
+
+        }
+    }
+    function iron3() {
+        if (water === '흰파노') {
+            localStorage.setItem('antidote', 1);
+        }
+        else {
+
+        }
+    }
+    function hiddenend() {
+        if (water === '흰빨파노') {
+            hiddengv = 1;
+            localStorage.setItem('gray', hiddengv);
+        }
+        if(water === "흰") {
+            hiddenwv = 1;
+            localStorage.setItem('white', hiddenwv);
+        }
+        if(water === "빨파노") {
+            hiddenbv = 1;
+            localStorage.setItem('black', hiddenbv);
+        }
+    }
+    let gray = localStorage.getItem('grat');
+    let white = localStorage.getItem('white');
+    let black = localStorage.getItem('black');
+    if (white === "1" && gray === "1" && black === "1") {
+            window.location.replace('히든엔딩.html');
+        }
+</script>
+</html>

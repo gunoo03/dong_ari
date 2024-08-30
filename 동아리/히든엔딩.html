@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>히든엔딩</title>
+    <style>
+        #restart2 {
+            position: fixed;
+            left: 20px;
+            top: 170px;
+            display: none;
+        }
+        #first1 {
+            position: fixed;
+            left: 100px;
+            top: 170px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+    <input id="restart2" type="button" onclick="location.href='식물원2.html'" value="다시하기">
+    <input id="first1" type="button" onclick="location.href='오프닝.html'" value="처음부터">
+
+    <script>
+        const contentDiv = document.getElementById("content");
+        const restartButton = document.getElementById("restart2");
+        const first1Button = document.getElementById("first1");
+
+        setTimeout(() => {
+            contentDiv.innerHTML = "그와 새는 자유롭게 날아 동물원을 넘어갔습니다.<br>";
+        }, 1000);
+
+        setTimeout(() => {
+            contentDiv.innerHTML += "그러나 괴물이 된 새와 그를 반겨주는 곳은 어디에도 없었습니다.<br>";
+        }, 2500);
+
+        setTimeout(() => {
+            contentDiv.innerHTML += "당연한 얘기였지만, 그들은 살기 위해 어쩔수 없이 다시 동물원으로 돌아갔습니다.<br>";
+        }, 4500);
+
+        setTimeout(() => {
+            contentDiv.innerHTML += "<h1>히든엔딩</h1><br>";
+        }, 6500);
+
+        setTimeout(() => {
+            restartButton.style.display = "block";
+        }, 7000);
+
+        setTimeout(() => {
+            first1Button.style.display = "block";
+        }, 7000);
+    </script>
+</body>
+</html>

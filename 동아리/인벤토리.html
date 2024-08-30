@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식물원</title>
+    <style>
+        #container{
+            position: relative;
+            left: 0px;
+            top: -200px;
+        }
+        .string{
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+        #inv {
+            width: 1520px;
+            height: 200px;
+            }
+        @keyframes inventory {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(200px);
+            }
+        }
+        .container {
+            width: 1520px;
+            height: 200px;
+            background: gold;
+            }
+        .container:hover {
+            animation: inventory 1s;
+            animation-fill-mode: forwards;
+            }
+        .string:hover {
+            animation: inventory 1s;
+            animation-fill-mode: forwards;
+        }
+        .inventory:hover {
+            animation: inventory 1s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+<script>
+</script>
+<body>
+    <ul id="inventory">
+        <li><div class="container" id=container><a href="#"><img src="inv.png" id="inv"></a></div></li>
+        <li><div class="string" id=container><a href="#"><img src="string.png" id="string"></a></div></li>
+    </ul>
+</body>
+</html>

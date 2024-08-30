@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식물원</title>
+    <style>
+        #one{
+            position: absolute;
+            left: 100px;
+            top: 0px; /*배경위치고정*/
+        }
+        #two{
+            position: absolute;
+            left: 100px;
+            top: 0px; /*배경위치고정*/
+        }
+        #three{
+            position: absolute;
+            left: 100px;
+            top: 0px; /*배경위치고정*/
+        }
+        #four{
+            position: absolute;
+            left: 500px;
+            top: 50px; /*대갈위치고정*/
+        }
+    </style>
+</head>
+<body>
+    <button onclick="gostraight()" left="1500">앞으로 가기</button>
+    <div id=one><img src="식1.png" width="1400" height="720"></div>
+    <div id=two><img src="식1.png" width="1500" height="730"></div>
+    <div id=three><img src="식1.png" width="1600" height="740"></div>
+    <div id=four><img src="대갈사진" width="500" height="600" left="500px" 500px top="50px"></div>
+</body>
+<script>
+    document.getElementById("four").style.display = "none";
+function music() {
+    var audio2 = new Audio("BoomShort.mp3");
+    audio2.loop = true;
+    audio2.volume = 0.5;
+    audio2.play().catch(function(error) {
+                console.log('Audio playback failed:', error);
+    });
+    setTimeout(function () {
+    audio2.pause();
+  }, 1000);
+}
+function gostraight() {
+    document.getElementById("one").style.display = "none";
+    document.getElementById("two").style.display = "none";
+    document.getElementById("three").style.display = "none";
+    setTimeout(() => document.getElementById("one").style.display = "block",0);
+    setTimeout(() => document.getElementById("two").style.display = "block", 1000);
+    setTimeout(() => document.getElementById("one").style.display = "none", 1000);
+    setTimeout(() => document.getElementById("three").style.display = "block", 2000);
+    setTimeout(() => document.getElementById("two").style.display = "none", 2000);
+    setTimeout(() => music(), 3500);
+    setTimeout(() => document.getElementById("four").style.display = "block", 5000);
+    setTimeout(() => alert("머리가 떨어져 있다. 가까이 가지말고 내부로 들어가자"), 6000);
+    setTimeout(() => window.location.replace('식물원2.html'), 6000);
+}
+</script>
+</html>

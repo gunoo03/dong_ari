@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<script>
+    function music() {
+        var audio2 = new Audio("MP_Slug_Crawling.mp3");
+        audio2.loop = true;
+        audio2.volume = 1.0;
+        audio2.playbackRate = 2.1;
+        audio2.play().catch(function(error) {
+                console.log('Audio playback failed:', error);
+        });
+    }
+</script>
+<body>
+</body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식물원</title>
+    <style>
+        #b{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+        }
+        #a{
+            position: fixed;
+            left: 20px;
+            top: 300px; /*왼화 위치 지정*/
+        }
+        #c{
+            position: fixed;
+            left: 1350px;
+            top: 300px; /*오른화 위치 지정*/
+        }
+        #d{
+            position: fixed;
+            left: 700px;
+            top: 20px; /*위화 위치 지정*/
+        }
+        .one img {
+            transition: all 0.2s linear;
+        }
+        .one:hover img {
+            transform: scale(1.1);
+        }
+        #red{
+            position: fixed;
+            left: 300px;
+            top: 20px; /*빨꽃 위치 지정*/
+        }
+        #blue{
+            position: fixed;
+            left: 100px;
+            top: 20px; /*파꽃 위치 지정*/
+        }
+        #yellow{
+            position: fixed;
+            left: 500px;
+            top: 20px; /*노꽃 위치 지정*/
+        }
+        #white{
+            position: fixed;
+            left: 700px;
+            top: 20px; /*흰꽃 위치 지정*/
+        }
+        #bottle{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+        }
+        #clear{
+            position: fixed;
+            left: 780px;
+            top: 400px; /*클리어 위치 지정*/
+        }
+        #end{
+            position: fixed;
+            left: 780px;
+            top: 190px; /*클리어 위치 지정*/
+        }
+    </style>
+</head>
+<script>
+    let keyaqua = localStorage.getItem('keyaqua');
+    let antidote = localStorage.getItem('antidote');
+    let yellowv = 0;
+    let redv = 0;
+    let bluev = 0;
+    let whitev = 0;
+    function yellowfu() {
+            yellowv += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '무'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //무
+                        }
+                        else{
+                            let i= '노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파랑
+                        }
+                        else{
+                            let i= '파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); // 빨
+                        }
+                        else{
+                            let i= '빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파
+                        }
+                        else{
+                            let i= '빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰
+                        }
+                        else{
+                            let i= '흰노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파
+                        }
+                        else{
+                            let i= '흰파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨
+                        }
+                        else{
+                            let i= '흰빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파
+                        }
+                        else{
+                            let i= '흰빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+        function redfu() {
+            redv += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '무'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //무
+                        }
+                        else{
+                            let i= '노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파랑
+                        }
+                        else{
+                            let i= '파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); // 빨
+                        }
+                        else{
+                            let i= '빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파
+                        }
+                        else{
+                            let i= '빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰
+                        }
+                        else{
+                            let i= '흰노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파
+                        }
+                        else{
+                            let i= '흰파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨
+                        }
+                        else{
+                            let i= '흰빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파
+                        }
+                        else{
+                            let i= '흰빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+        function bluefu() {
+            bluev += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '무'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //무
+                        }
+                        else{
+                            let i= '노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파랑
+                        }
+                        else{
+                            let i= '파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); // 빨
+                        }
+                        else{
+                            let i= '빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파
+                        }
+                        else{
+                            let i= '빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰
+                        }
+                        else{
+                            let i= '흰노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파
+                        }
+                        else{
+                            let i= '흰파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨
+                        }
+                        else{
+                            let i= '흰빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파
+                        }
+                        else{
+                            let i= '흰빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+        function whitefu() {
+            whitev += 1;
+            if (whitev === 0) {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '무'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //무
+                        }
+                        else{
+                            let i= '노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파랑
+                        }
+                        else{
+                            let i= '파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); // 빨
+                        }
+                        else{
+                            let i= '빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파
+                        }
+                        else{
+                            let i= '빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //빨파노
+                        }
+                    }
+                }
+            }
+            else {
+                if(redv===0) {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰
+                        }
+                        else{
+                            let i= '흰노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파
+                        }
+                        else{
+                            let i= '흰파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰파노
+                        }
+                    }
+                }
+                else {
+                    if(bluev===0){
+                        if(yellowv===0){
+                            let i= '흰빨'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨
+                        }
+                        else{
+                            let i= '흰빨노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨노
+                        }
+                    }
+                    else {
+                        if(yellowv===0){
+                            let i= '흰빨파'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파
+                        }
+                        else{
+                            let i= '흰빨파노'
+                            localStorage.removeItem('bottle'); 
+                            localStorage.setItem('bottle', i); //흰빨파노
+                        }
+                    }
+                }
+            }
+        };
+    function ending() {
+        if(keyaqua==="1") {
+            if(antidote==="1") {
+                window.location.replace('진엔딩.html');
+            }
+            else{
+                window.location.replace('배드엔딩.html');
+            }
+        }
+        else {
+            alert("키가 없어서 탈출할수 없다")
+        }
+    }
+    function color() {
+        console.log(localStorage.getItem('bottle'));
+    }
+    function waterclear() {
+    localStorage.setItem('bottle', '무');
+    //무색 물병 사진
+    }
+</script>
+<body>
+    <div id="b"><img src="우물.png" width="1600" height="740"></div>
+    <div id="a">새장<a href="새장.html" class="one"><img src="왼화.png" width="100" height="100"></a></div>
+    <div id="c">사파리<a href="사파리.html" class="one"><img src="오른화.png" width="100" height="100"></a></div>
+    <div id="d">아쿠아리움<a href="아쿠아리움.html" class="one"><img src="위화.png" width="100" height="100"></a></div>
+    <div id="red"><a href="#"><img src="redf.png" width="100" height="100" onclick="redfu()"></a></div>
+    <div id="blue"><a href="#"><img src="bluef.png" width="100" height="100" onclick="bluefu()"></a></div>
+    <div id="yellow"><a href="#"><img src="yellowf.png" width="100" height="100" onclick="yellowfu()"></a></div>
+    <div id="white"><a href="#"><img src="whitef.png" width="100" height="100" onclick="whitefu()"></a></div>
+    <div id="bottle"><a href="#"><img src="bottle.png" width="100" height="100"></a></div>
+    <div id="clear"><a href="#"><img src="bottle.png" width="100" height="100" onclick="waterclear()"></a></div>
+    <div id="end"><a href="#"><img src="bottle.png" width="100" height="100" onclick="ending()"></a></div>
+</body>
+</html>
