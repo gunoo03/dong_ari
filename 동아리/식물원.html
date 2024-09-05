@@ -7,32 +7,45 @@
     <style>
         #one{
             position: absolute;
-            left: 100px;
-            top: 0px; /*배경위치고정*/
+            left: 0px;
+            top: -10px; /*배경위치고정*/
         }
         #two{
             position: absolute;
-            left: 100px;
-            top: 0px; /*배경위치고정*/
+            left: 0px;
+            top: -20px; /*배경위치고정*/
         }
         #three{
             position: absolute;
-            left: 100px;
-            top: 0px; /*배경위치고정*/
+            left: 0px;
+            top: -30px; /*배경위치고정*/
         }
         #four{
             position: absolute;
             left: 500px;
             top: 50px; /*대갈위치고정*/
         }
+        #f{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*어둠 위치 지정*/
+            z-index: 10;
+            pointer-events: none;
+        }
+        #go{
+            position: absolute;
+            left: 700px;
+            z-index: 11;
+        }
     </style>
 </head>
 <body>
-    <button onclick="gostraight()" left="1500">앞으로 가기</button>
-    <div id=one><img src="식1.png" width="1400" height="720"></div>
-    <div id=two><img src="식1.png" width="1500" height="730"></div>
-    <div id=three><img src="식1.png" width="1600" height="740"></div>
-    <div id=four><img src="대갈사진" width="500" height="600" left="500px" 500px top="50px"></div>
+    <input id="go" type="button" onclick="gostraight()" value="앞으로 가기">
+    <div id=one><img src="tree.png" width="1400" height="720"></div>
+    <div id=two><img src="tree.png" width="1500" height="730"></div>
+    <div id=three><img src="tree.png" width="1600" height="740"></div>
+    <div id=four><img src="head.png" width="500" height="600" left="500px" 500px top="50px"></div>
+    <div id="f"><img src="dark.png" width="1600" height="740"></div>	
 </body>
 <script>
     document.getElementById("four").style.display = "none";
@@ -59,7 +72,7 @@ function gostraight() {
     setTimeout(() => music(), 3500);
     setTimeout(() => document.getElementById("four").style.display = "block", 5000);
     setTimeout(() => alert("머리가 떨어져 있다. 가까이 가지말고 내부로 들어가자"), 6000);
-    setTimeout(() => window.location.replace('식물원2.html'), 6000);
+    setTimeout(() => window.location.replace('식물원1_5.html'), 6000);
 }
 </script>
 </html>

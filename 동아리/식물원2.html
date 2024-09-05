@@ -14,16 +14,19 @@
             position: fixed;
             left: 20px;
             top: 300px; /*왼화 위치 지정*/
+            z-index: 1;
         }
         #c{
             position: fixed;
             left: 1350px;
             top: 300px; /*오른화 위치 지정*/
+            z-index: 1;
         }
         #d{
             position: fixed;
             left: 700px;
             top: 20px; /*위화 위치 지정*/
+            z-index: 1;
         }
         .one img {
             transition: all 0.2s linear;
@@ -31,494 +34,1451 @@
         .one:hover img {
             transform: scale(1.1);
         }
-        #red{
+        #redfl{
+            position: fixed;
+            
+            left: 420px;
+            top: 450px; /*빨꽃 위치 지정*/
+            z-index: 1;
+        }
+        #bluefl{
             position: fixed;
             left: 300px;
-            top: 20px; /*빨꽃 위치 지정*/
+            top: 450px; /*파꽃 위치 지정*/
+            z-index: 1;
         }
-        #blue{
+        #yellowfl{
             position: fixed;
-            left: 100px;
-            top: 20px; /*파꽃 위치 지정*/
+            right: 370px;
+            top: 450px; /*노꽃 위치 지정*/
+            z-index: 1;
         }
-        #yellow{
+        #whitefl{
             position: fixed;
-            left: 500px;
-            top: 20px; /*노꽃 위치 지정*/
+            right: 250px;
+            top: 450px; /*흰꽃 위치 지정*/
+            z-index: 1;
         }
-        #white{
-            position: fixed;
-            left: 700px;
-            top: 20px; /*흰꽃 위치 지정*/
-        }
-        #bottle{
+        #red{
             position: fixed;
             left: 780px;
             top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #blue{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #yellow{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #white{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #colorless{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #orange{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #pink{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #purple{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #green{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #lightyellow{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #skyblue{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #black{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #brown{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #lightpurple{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #lightgreen{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
+        }
+        #gray{
+            position: fixed;
+            left: 780px;
+            top: 580px; /*물병 위치 지정*/
+            z-index: 1;
+            display: none;
         }
         #clear{
             position: fixed;
-            left: 780px;
-            top: 400px; /*클리어 위치 지정*/
+            left: 100px;
+            top: 35px; /*클리어 위치 지정*/
+            z-index: 0;
         }
         #end{
             position: fixed;
-            left: 780px;
-            top: 190px; /*클리어 위치 지정*/
+            left: 1030px;
+            top: 340px; /*클리어 위치 지정*/
+        }
+        #f{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*어둠 위치 지정*/
+            z-index: 10;
+            pointer-events: none;
         }
     </style>
 </head>
 <script>
+    //alert("약간의 꽃과 물이보인다.")
     let keyaqua = localStorage.getItem('keyaqua');
     let antidote = localStorage.getItem('antidote');
     let yellowv = 0;
     let redv = 0;
-    let bluev = 0;
-    let whitev = 0;
+    let bluev = 0; 
+    let whitev = 0; 
     function yellowfu() {
-            yellowv += 1;
-            if (whitev === 0) {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '무'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //무
-                        }
-                        else{
-                            let i= '노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파랑
-                        }
-                        else{
-                            let i= '파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파노
-                        }
-                    }
-                }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); // 빨
-                        }
-                        else{
-                            let i= '빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파
-                        }
-                        else{
-                            let i= '빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파노
-                        }
-                    }
-                }
+        yellowv = 1;
+
+        if (whitev === 0 && redv === 0 && bluev === 0 && yellowv === 0) {
+            let i = '무';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
             }
-            else {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰
-                        }
-                        else{
-                            let i= '흰노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파
-                        }
-                        else{
-                            let i= '흰파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파노
-                        }
-                    }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("colorless", "block");
+        }
+        if (whitev === 0 && redv === 0 && whitev === 0) {
+            if (yellowv === 1) {
+                let i = '노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
                 }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨
-                        }
-                        else{
-                            let i= '흰빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파
-                        }
-                        else{
-                            let i= '흰빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파노
-                        }
-                    }
-                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("yellow", "block");
             }
-        };
-        function redfu() {
-            redv += 1;
-            if (whitev === 0) {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '무'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //무
-                        }
-                        else{
-                            let i= '노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파랑
-                        }
-                        else{
-                            let i= '파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파노
-                        }
-                    }
+        }
+        if (whitev === 0 && redv === 0 && yellowv === 0) {
+            if (bluev === 1) {
+                let i = '파';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
                 }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); // 빨
-                        }
-                        else{
-                            let i= '빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파
-                        }
-                        else{
-                            let i= '빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파노
-                        }
-                    }
-                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("blue", "block");
             }
-            else {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰
-                        }
-                        else{
-                            let i= '흰노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파
-                        }
-                        else{
-                            let i= '흰파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파노
-                        }
-                    }
+        }
+        if (whitev === 0 && yellowv === 0 && bluev === 0) {
+            if (redv === 1) {
+                let i = '빨';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
                 }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨
-                        }
-                        else{
-                            let i= '흰빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파
-                        }
-                        else{
-                            let i= '흰빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파노
-                        }
-                    }
-                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("red", "block");
             }
-        };
-        function bluefu() {
-            bluev += 1;
-            if (whitev === 0) {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '무'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //무
-                        }
-                        else{
-                            let i= '노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파랑
-                        }
-                        else{
-                            let i= '파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파노
-                        }
-                    }
+        }
+        if (yellowv === 0 && redv === 0 && bluev === 0) {
+            if (whitev === 1) {
+                let i = '흰';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
                 }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); // 빨
-                        }
-                        else{
-                            let i= '빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파
-                        }
-                        else{
-                            let i= '빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파노
-                        }
-                    }
-                }
+
+                const elements = [
+                    "red", "blue", "yellow", "colorless", "white", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("white", "block");
             }
-            else {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰
-                        }
-                        else{
-                            let i= '흰노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파
-                        }
-                        else{
-                            let i= '흰파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파노
-                        }
-                    }
+        }
+        if (whitev === 0 && bluev === 0) {
+            if (yellowv === 1 && redv === 1) {
+                let i = '오';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
                 }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨
-                        }
-                        else{
-                            let i= '흰빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파
-                        }
-                        else{
-                            let i= '흰빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파노
-                        }
-                    }
-                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("orange", "block");
             }
-        };
-        function whitefu() {
-            whitev += 1;
-            if (whitev === 0) {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '무'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //무
-                        }
-                        else{
-                            let i= '노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파랑
-                        }
-                        else{
-                            let i= '파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //파노
-                        }
-                    }
+        }
+        if (yellowv === 0 && bluev === 0) {
+            if (whitev === 1 && redv === 1) {
+                let i = '핑';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
                 }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); // 빨
-                        }
-                        else{
-                            let i= '빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파
-                        }
-                        else{
-                            let i= '빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //빨파노
-                        }
-                    }
-                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("pink", "block");
             }
-            else {
-                if(redv===0) {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰
-                        }
-                        else{
-                            let i= '흰노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파
-                        }
-                        else{
-                            let i= '흰파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰파노
-                        }
-                    }
+        }
+        if (whitev === 0 && yellowv === 0) {
+            if (redv === 1 && bluev === 1) {
+                let i = '보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
                 }
-                else {
-                    if(bluev===0){
-                        if(yellowv===0){
-                            let i= '흰빨'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨
-                        }
-                        else{
-                            let i= '흰빨노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨노
-                        }
-                    }
-                    else {
-                        if(yellowv===0){
-                            let i= '흰빨파'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파
-                        }
-                        else{
-                            let i= '흰빨파노'
-                            localStorage.removeItem('bottle'); 
-                            localStorage.setItem('bottle', i); //흰빨파노
-                        }
-                    }
-                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("purple", "block");
             }
-        };
+        }
+        if (whitev === 0 && redv === 0) {
+            if (yellowv === 1 && bluev === 1) {
+                let i = '초';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("green", "block");
+            }
+        }
+        if (redv === 0 && bluev === 0) {
+            if (whitev === 1 && yellowv === 1) {
+                let i = '연노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightyellow", "block");
+            }
+        }
+        if (yellowv === 0 && redv === 0) {
+            if (whitev === 1 && bluev === 1) {
+                let i = '하';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("skyblue", "block");
+            }
+        }
+        if (whitev === 0) {
+            if (yellowv === 1 && redv === 1 && bluev === 1) {
+                let i = '검';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("black", "block");
+            }
+        }
+        if (bluev === 0) {
+            if (whitev === 1 && redv === 1 && yellowv === 1) {
+                let i = '갈';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("brown", "block");
+            }
+        }
+        if (yellowv === 0) {
+            if (whitev === 1 && redv === 1 && bluev === 1) {
+                let i = '연보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightpurple", "block");
+            }
+        }
+        if (redv === 0) {
+            if (whitev === 1 && yellowv === 1 && bluev === 1) {
+                let i = '연두';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightgreen", "block");
+            }
+        }
+        if (whitev === 1 && redv === 1 && bluev === 1 && yellowv === 1) {
+            let i = '회';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",                
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("gray", "block");
+        }
+    }
+    function redfu() {
+        redv = 1;
+
+        if (whitev === 0 && redv === 0 && bluev === 0 && yellowv === 0) {
+            let i = '무';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("colorless", "block");
+        }
+        if (whitev === 0 && redv === 0 && whitev === 0) {
+            if (yellowv === 1) {
+                let i = '노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("yellow", "block");
+            }
+        }
+        if (whitev === 0 && redv === 0 && yellowv === 0) {
+            if (bluev === 1) {
+                let i = '파';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("blue", "block");
+            }
+        }
+        if (whitev === 0 && yellowv === 0 && bluev === 0) {
+            if (redv === 1) {
+                let i = '빨';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("red", "block");
+            }
+        }
+        if (yellowv === 0 && redv === 0 && bluev === 0) {
+            if (whitev === 1) {
+                let i = '흰';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "colorless", "white", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("white", "block");
+            }
+        }
+        if (whitev === 0 && bluev === 0) {
+            if (yellowv === 1 && redv === 1) {
+                let i = '오';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("orange", "block");
+            }
+        }
+        if (yellowv === 0 && bluev === 0) {
+            if (whitev === 1 && redv === 1) {
+                let i = '핑';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("pink", "block");
+            }
+        }
+        if (whitev === 0 && yellowv === 0) {
+            if (redv === 1 && bluev === 1) {
+                let i = '보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("purple", "block");
+            }
+        }
+        if (whitev === 0 && redv === 0) {
+            if (yellowv === 1 && bluev === 1) {
+                let i = '초';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("green", "block");
+            }
+        }
+        if (redv === 0 && bluev === 0) {
+            if (whitev === 1 && yellowv === 1) {
+                let i = '연노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightyellow", "block");
+            }
+        }
+        if (yellowv === 0 && redv === 0) {
+            if (whitev === 1 && bluev === 1) {
+                let i = '하';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("skyblue", "block");
+            }
+        }
+        if (whitev === 0) {
+            if (yellowv === 1 && redv === 1 && bluev === 1) {
+                let i = '검';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("black", "block");
+            }
+        }
+        if (bluev === 0) {
+            if (whitev === 1 && redv === 1 && yellowv === 1) {
+                let i = '갈';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("brown", "block");
+            }
+        }
+        if (yellowv === 0) {
+            if (whitev === 1 && redv === 1 && bluev === 1) {
+                let i = '연보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightpurple", "block");
+            }
+        }
+        if (redv === 0) {
+            if (whitev === 1 && yellowv === 1 && bluev === 1) {
+                let i = '연두';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightgreen", "block");
+            }
+        }
+        if (whitev === 1 && redv === 1 && bluev === 1 && yellowv === 1) {
+            let i = '회';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",                
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("gray", "block");
+        }
+    }
+    function bluefu() {
+        bluev = 1;
+
+        if (whitev === 0 && redv === 0 && bluev === 0 && yellowv === 0) {
+            let i = '무';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("colorless", "block");
+        }
+        if (whitev === 0 && redv === 0 && whitev === 0) {
+            if (yellowv === 1) {
+                let i = '노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("yellow", "block");
+            }
+        }
+        if (whitev === 0 && redv === 0 && yellowv === 0) {
+            if (bluev === 1) {
+                let i = '파';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("blue", "block");
+            }
+        }
+        if (whitev === 0 && yellowv === 0 && bluev === 0) {
+            if (redv === 1) {
+                let i = '빨';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("red", "block");
+            }
+        }
+        if (yellowv === 0 && redv === 0 && bluev === 0) {
+            if (whitev === 1) {
+                let i = '흰';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "colorless", "white", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("white", "block");
+            }
+        }
+        if (whitev === 0 && bluev === 0) {
+            if (yellowv === 1 && redv === 1) {
+                let i = '오';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("orange", "block");
+            }
+        }
+        if (yellowv === 0 && bluev === 0) {
+            if (whitev === 1 && redv === 1) {
+                let i = '핑';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("pink", "block");
+            }
+        }
+        if (whitev === 0 && yellowv === 0) {
+            if (redv === 1 && bluev === 1) {
+                let i = '보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("purple", "block");
+            }
+        }
+        if (whitev === 0 && redv === 0) {
+            if (yellowv === 1 && bluev === 1) {
+                let i = '초';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("green", "block");
+            }
+        }
+        if (redv === 0 && bluev === 0) {
+            if (whitev === 1 && yellowv === 1) {
+                let i = '연노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightyellow", "block");
+            }
+        }
+        if (yellowv === 0 && redv === 0) {
+            if (whitev === 1 && bluev === 1) {
+                let i = '하';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("skyblue", "block");
+            }
+        }
+        if (whitev === 0) {
+            if (yellowv === 1 && redv === 1 && bluev === 1) {
+                let i = '검';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("black", "block");
+            }
+        }
+        if (bluev === 0) {
+            if (whitev === 1 && redv === 1 && yellowv === 1) {
+                let i = '갈';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("brown", "block");
+            }
+        }
+        if (yellowv === 0) {
+            if (whitev === 1 && redv === 1 && bluev === 1) {
+                let i = '연보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightpurple", "block");
+            }
+        }
+        if (redv === 0) {
+            if (whitev === 1 && yellowv === 1 && bluev === 1) {
+                let i = '연두';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightgreen", "block");
+            }
+        }
+        if (whitev === 1 && redv === 1 && bluev === 1 && yellowv === 1) {
+            let i = '회';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",                
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("gray", "block");
+        }
+    }
+    function whitefu() {
+        whitev = 1;
+
+        if (whitev === 0 && redv === 0 && bluev === 0 && yellowv === 0) {
+            let i = '무';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("colorless", "block");
+        }
+        if (whitev === 0 && redv === 0 && y === 0) {
+            if (yellowv === 1) {
+                let i = '노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("yellow", "block");
+            }
+        }
+        if (whitev === 0 && redv === 0 && yellowv === 0) {
+            if (bluev === 1) {
+                let i = '파';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("blue", "block");
+            }
+        }
+        if (whitev === 0 && yellowv === 0 && bluev === 0) {
+            if (redv === 1) {
+                let i = '빨';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("red", "block");
+            }
+        }
+        if (yellowv === 0 && redv === 0 && bluev === 0) {
+            if (whitev === 1) {
+                let i = '흰';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "colorless", "white", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("white", "block");
+            }
+        }
+        if (whitev === 0 && bluev === 0) {
+            if (yellowv === 1 && redv === 1) {
+                let i = '오';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("orange", "block");
+            }
+        }
+        if (yellowv === 0 && bluev === 0) {
+            if (whitev === 1 && redv === 1) {
+                let i = '핑';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("pink", "block");
+            }
+        }
+        if (whitev === 0 && yellowv === 0) {
+            if (redv === 1 && bluev === 1) {
+                let i = '보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("purple", "block");
+            }
+        }
+        if (whitev === 0 && redv === 0) {
+            if (yellowv === 1 && bluev === 1) {
+                let i = '초';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("green", "block");
+            }
+        }
+        if (redv === 0 && bluev === 0) {
+            if (whitev === 1 && yellowv === 1) {
+                let i = '연노';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightyellow", "block");
+            }
+        }
+        if (yellowv === 0 && redv === 0) {
+            if (whitev === 1 && bluev === 1) {
+                let i = '하';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("skyblue", "block");
+            }
+        }
+        if (whitev === 0) {
+            if (yellowv === 1 && redv === 1 && bluev === 1) {
+                let i = '검';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("black", "block");
+            }
+        }
+        if (bluev === 0) {
+            if (whitev === 1 && redv === 1 && yellowv === 1) {
+                let i = '갈';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("brown", "block");
+            }
+        }
+        if (yellowv === 0) {
+            if (whitev === 1 && redv === 1 && bluev === 1) {
+                let i = '연보';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightpurple", "block");
+            }
+        }
+        if (redv === 0) {
+            if (whitev === 1 && yellowv === 1 && bluev === 1) {
+                let i = '연두';
+                localStorage.removeItem('bottle');
+                localStorage.setItem('bottle', i); 
+
+                function setDisplay(id, display) {
+                    document.getElementById(id).style.display = display;
+                }
+
+                const elements = [
+                    "red", "blue", "yellow", "white", "colorless", "orange", "pink",
+                    "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                    "lightpurple", "lightgreen", "gray"
+                ];
+                elements.forEach(id => setDisplay(id, "none"));
+
+                setDisplay("lightgreen", "block");
+            }
+        }
+        if (whitev === 1 && redv === 1 && bluev === 1 && yellowv === 1) {
+            let i = '회';
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",                
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("gray", "block");
+        }
+    }
     function ending() {
         if(keyaqua==="1") {
             if(antidote==="1") {
@@ -536,21 +1496,56 @@
         console.log(localStorage.getItem('bottle'));
     }
     function waterclear() {
-    localStorage.setItem('bottle', '무');
+            let i = '무';
+            whitev = 0;
+            redv = 0;
+            bluev = 0;
+            yellowv = 0;
+            localStorage.removeItem('bottle');
+            localStorage.setItem('bottle', i); 
+
+            function setDisplay(id, display) {
+                document.getElementById(id).style.display = display;
+            }
+
+            const elements = [
+                "red", "blue", "yellow", "white", "colorless", "orange", "pink",                
+                "purple", "green", "lightyellow", "skyblue", "black", "brown",
+                "lightpurple", "lightgreen", "gray"
+            ];
+            elements.forEach(id => setDisplay(id, "none"));
+
+            setDisplay("colorless", "block");
     //무색 물병 사진
     }
 </script>
 <body>
-    <div id="b"><img src="우물.png" width="1600" height="740"></div>
-    <div id="a">새장<a href="새장.html" class="one"><img src="왼화.png" width="100" height="100"></a></div>
-    <div id="c">사파리<a href="사파리.html" class="one"><img src="오른화.png" width="100" height="100"></a></div>
-    <div id="d">아쿠아리움<a href="아쿠아리움.html" class="one"><img src="위화.png" width="100" height="100"></a></div>
-    <div id="red"><a href="#"><img src="redf.png" width="100" height="100" onclick="redfu()"></a></div>
-    <div id="blue"><a href="#"><img src="bluef.png" width="100" height="100" onclick="bluefu()"></a></div>
-    <div id="yellow"><a href="#"><img src="yellowf.png" width="100" height="100" onclick="yellowfu()"></a></div>
-    <div id="white"><a href="#"><img src="whitef.png" width="100" height="100" onclick="whitefu()"></a></div>
-    <div id="bottle"><a href="#"><img src="bottle.png" width="100" height="100"></a></div>
-    <div id="clear"><a href="#"><img src="bottle.png" width="100" height="100" onclick="waterclear()"></a></div>
-    <div id="end"><a href="#"><img src="bottle.png" width="100" height="100" onclick="ending()"></a></div>
+    <div id="b"><img src="sikmul.png" width="1600" height="740"></div>
+    <div id="a"><span style="color: white;">새장</span><a href="새장.html" class="one"><img src="왼화.png" width="100" height="100"></a></div>
+    <div id="c"><span style="color: white;">사파리</span><a href="사파리.html" class="one"><img src="오른화.png" width="100" height="100"></a></div>
+    <div id="d"><span style="color: white;">아쿠아리움</span><a href="아쿠아리움.html" class="one"><img src="위화.png" width="100" height="100"></a></div>
+    <div id="redfl"><a href="#"><img src="redflower.png" width="150" height="200" onclick="redfu()"></a></div>
+    <div id="bluefl"><a href="#"><img src="blueflower.png" width="150" height="200" onclick="bluefu()"></a></div>
+    <div id="yellowfl"><a href="#"><img src="yellowflower.png" width="150" height="200" onclick="yellowfu()"></a></div>
+    <div id="whitefl"><a href="#"><img src="whiteflower.png" width="150" height="200" onclick="whitefu()"></a></div>
+    <div id="red"><a href="#"><img src="red.png" width="100" height="100"></a></div>
+    <div id="blue"><a href="#"><img src="blue.png" width="100" height="100"></a></div>
+    <div id="yellow"><a href="#"><img src="yellow.png" width="100" height="100"></a></div>
+    <div id="white"><a href="#"><img src="white.png" width="100" height="100"></a></div>
+    <div id="colorless"><a href="#"><img src="colorless.png" width="100" height="100"></a></div>
+    <div id="orange"><a href="#"><img src="orange.png" width="100" height="100"></a></div>
+    <div id="pink"><a href="#"><img src="pink.png" width="100" height="100"></a></div>
+    <div id="purple"><a href="#"><img src="purple.png" width="100" height="100"></a></div>
+    <div id="green"><a href="#"><img src="green.png" width="100" height="100"></a></div>
+    <div id="lightyellow"><a href="#"><img src="lightyellow.png" width="100" height="100"></a></div>
+    <div id="skyblue"><a href="#"><img src="skyblue.png" width="100" height="100"></a></div>
+    <div id="black"><a href="#"><img src="black.png" width="100" height="100"></a></div>
+    <div id="brown"><a href="#"><img src="brown.png" width="100" height="100"></a></div>
+    <div id="lightpurple"><a href="#"><img src="lightpurple.png" width="100" height="100"></a></div>
+    <div id="lightgreen"><a href="#"><img src="lightgreen.png" width="100" height="100"></a></div>
+    <div id="gray"><a href="#"><img src="gray.png" width="100" height="100"></a></div>
+    <div id="clear"><a href="#"><img src="clear.png" width="1400" height="700" onclick="waterclear()"></a></div>
+    <div id="end"><a href="#"><img src="lock.png" width="100" height="100" onclick="ending()"></a></div>
+    <div id="f"><img src="dark.png" width="1600" height="740"></div>	
 </body>
 </html>

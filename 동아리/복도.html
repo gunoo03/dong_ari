@@ -7,77 +7,89 @@
     <style>
         #one{
             position: absolute;
-            left: 219px;
-            top: 4px;/*괴물 1번 상태*/
+            left: 700px;
+            top: 250px;/*괴물 1번 상태*/
         }
         #two{
             position: absolute;
-            left: 219px;
-            top: 4px;
+            left: 650px;
+            top: 200px;
             /*괴물 2번 상태*/
         }
         #three{
             position: absolute;
-            left: 219px;
-            top: 4px;
+            left: 600px;
+            top: 150px;
             /*괴물 3번 상태*/
         }
         #four{
             position: absolute;
-            left: 219px;
-            top: 4px;
+            left: 550px;
+            top: 100px;
             /*괴물 4번 상태*/
         }
         #five{
             position: absolute;
-            left: 219px;
-            top: 4px;
+            left: 500px;
+            top: 50px;
              /*괴물 5번 상태*/
         }
         #jumps{
             position: absolute;
-            left: 0px;
-            top: 0px;
+            left: -300px;
+            top: -500px;
+            z-index: 11;
              /*점스 상태*/
         }
         #password{
             position: absolute;
             left: 219px;
             top: 4px;
+            z-index: 11;
              /*입력칸*/
         }
         #inputpwbt{
             position: absolute;
             left: 400px;
             top: 4px;
+            z-index: 11;
              /*입력칸버튼*/
         }
         #restart{
             position: absolute;
             left: 0px;
             top: 0px;
+            z-index: 11;
              /*입력칸버튼*/
+        }
+        #f{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*어둠 위치 지정*/
+            z-index: 10;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-    <div id=one><img src="baqui.jpg" width="100";></div>
-    <div id=two><img src="baqui.jpg" width="200";></div>
-    <div id=three><img src="baqui.jpg" width="300";></div>
-    <div id=four><img src="baqui.jpg" width="400";></div>
-    <div id=five><img src="baqui.jpg" width="500";></div>
-    <div id=jumps><img src="baqui.jpg" width="1600" height="740";></div>
-    <input id=password autofocus type='text' pattern="\d*" maxlength='4' id="password">
+    <div id=one><img src="baqui.png" width="100";></div>
+    <div id=two><img src="baqui.png" width="200";></div>
+    <div id=three><img src="baqui.png" width="300";></div>
+    <div id=four><img src="baqui.png" width="400";></div>
+    <div id=five><img src="baqui.png" width="500";></div>
+    <div id=jumps><img src="baquieat.png" width="2000" height="1400";></div>
+    <input id=password autofocus type='text' pattern="\d*" maxlength='3' id="password">
     <input id=inputpwbt type="button" onclick="test()" value="내려가기">
-    <div id="nowater"><img src="아쿠아리움사진" width="1600" height="740"></div>
+    <div><img src="qhreh1.png" width="1600" height="740"></div>
     <input id=restart type="button" onclick="location.href='복도.html'" value="다시하기">
+    <div id="f"><img src="dark.png" width="1600" height="740"></div>	
 </body>
 <script>
     var timers = [];
     var audio2;
     function test() {
         var p = document.getElementById('password').value;
-        if (p === '1523') { // 비번
+        if (p === '427') { // 비번
             window.location.replace('복도2.html');
         } else {
             jumps();
@@ -138,6 +150,7 @@
     document.getElementById("five").style.display = "none";
     document.getElementById("jumps").style.display = "none";
     document.getElementById("restart").style.display = "none";
+    alert("비밀번호를 찾아 내려가자")
     timers.push(setTimeout(() => document.getElementById("one").style.display = "block", 1000));
     timers.push(setTimeout(() => document.getElementById("two").style.display = "block", 2000));
     timers.push(setTimeout(() => document.getElementById("one").style.display = "none", 2000));

@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아쿠아리움</title>
     <style>
-        #yeswater{
+        #yes{
             position: fixed;
             left: 0px;
             top: 0px; /*배경위치고정*/
+            display: block;
+        }
+        #no{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+            display: none;
         }
         .one img {
             transition: all 0.2s linear;
@@ -16,36 +23,94 @@
         .one:hover img {
             transform: scale(1.1);
         }
+        #key{
+            position: fixed;
+            left: 1000px;
+            top: 500px; /*배경위치고정*/
+            /* display: none; */
+        }
         #d{
             position: fixed;
             left: 700px;
             top: 580px; /*위화 위치 지정*/
         }
+        #jumps{
+            position: absolute;
+            left: -300px;
+            top: -50px;
+            z-index: 4;
+            display: none;
+             /*점스 상태*/
+        }
+        #restart{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 11;
+            display: none;
+        }
+        #f{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*어둠 위치 지정*/
+            z-index: 10;
+            pointer-events: none; 
+        }
     </style>
 </head>
+<body>
+    <div id="yes"><img src="yeswater.png" width="1600" height="740"></div>
+    <div id="no"><img src="nowater.png" width="1600" height="740"></div>
+    <div id="key"><img src="key.png" width="300" height="200" onclick="keyaquafu()"></div>
+    <div id="d">식물원<a href="식물원2.html" class="one"><img src="아래화.png" width="100" height="100"></a></div>
+    <input id="restart" type="button" onclick="location.href='아쿠아리움.html'" value="다시하기">
+    <div id=jumps><img src="fisheat.png" width="1900" height="650";></div>
+    <div id="f"><img src="dark.png" width="1600" height="740"></div>	
+</body>
 <script>
-    document.getElementById("key").style.display = "none"
-    document.getElementById("yeswater").style.display = "block"
-    document.getElementById("nowater").style.display = "none"
-    let pipe = localStorage.getItem('pipe');
-    if(pipe==1){
-        document.getElementById("nowater").style.display = "block"
-        document.getElementById("yeswater").style.display = "none"
+    let pipev = localStorage.getItem('pipe');
+    if(pipev=="1"){
+        document.getElementById("no").style.display = "block"
+        document.getElementById("yes").style.display = "none"
     }
     else{
-        document.getElementById("nowater").style.display = "none"
-        document.getElementById("yeswater").style.display = "block"
+        document.getElementById("no").style.display = "none"
+        document.getElementById("yes").style.display = "block"
     }
-    let keyaqua = 0
-    function keyaqua() {
-        keyaqua= 1
-        localStorage.setItem('keyaqua', keyaqua);
+    let audio2;
+
+    function music() {
+        if (!audio2) {
+            audio2 = new Audio("fuzzy-jumpscare-80560.mp3");
+            audio2.loop = true;
+            audio2.volume = 0.7;
+            audio2.playbackRate = 1.3;
+        }
+
+        audio2.play().catch(function(error) {
+            console.log('Audio playback failed:', error);
+        });
+        setTimeout(() => {
+            if (audio2) audio2.pause();
+        }, 3000);
+    }
+
+    function jumps() {
+        music();
+        document.getElementById("jumps").style.display = "block";
+        document.getElementById("restart").style.display = "block";
+        document.getElementById("d").style.display = "none"
+    }
+    let keyaqua =0
+    function keyaquafu() {
+        if(pipev==="1"){
+            keyaqua= 1
+            localStorage.setItem('keyaqua', keyaqua);
+            document.getElementById("key").style.display = "none"
+        }
+        else{
+            jumps();
+        }
     }
 </script>
-<body>
-    <div id="yeswater"><img src="아쿠아리움사진" width="1600" height="740"></div>
-    <div id="nowater"><img src="아쿠아리움사진" width="1600" height="740"></div>
-    <div><img src="키사진" width="100" onclick="keyaqua()"></div>
-    <div id="d">식물원<a href="식물원2.html" class="one"><img src="아래화.png" width="100" height="100"></a></div>
-</body>
 </html>

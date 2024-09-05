@@ -6,15 +6,22 @@
     <link rel="icon" href="icon.png" sizes="32x32">
     <title>사파리</title>
     <style>
-        #b{
-            position: fixed;
-            left: 0px;
-            top: 0px; /*배경위치고정*/
-        }
         #a{
             position: fixed;
             left: 20px;
             top: 300px; /*왼화 위치 지정*/
+            z-index: 3;
+        }
+        #c{
+            position: fixed;
+            left: 500px;
+            top: 210px; /*왼화 위치 지정*/
+            z-index: 2;
+            display: none;
+            transition: 1s;
+        }
+        #c:active{
+            transform: rotate(90deg);
         }
         .one img {
             transition: all 0.2s linear;
@@ -22,18 +29,114 @@
         .one:hover img {
             transform: scale(1.1);
         }
+        #b{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+            z-index: 1;
+        }
+        #e{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*배경위치고정*/
+            z-index: 1;
+            display: none;
+        }
+        #jumps{
+            position: absolute;
+            left: -100px;
+            top: 0px;
+            z-index: 4;
+            display: none;
+             /*점스 상태*/
+        }
+        #password{
+            position: absolute;
+            left: 219px;
+            top: 4px;
+            z-index: 11;
+             /*입력칸*/
+        }
+        #inputpwbt{
+            position: absolute;
+            left: 400px;
+            top: 4px;
+            z-index: 11;
+             /*입력칸버튼*/
+        }
+        #restart{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 11;
+            display: none;
+             /*입력칸버튼*/
+        }
+        #f{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*어둠 위치 지정*/
+            z-index: 10;
+            pointer-events: none;
+        }
     </style>
 </head>
+<body>
+    <div id=jumps><img src="topeat.png" width="2000" height="700";></div>
+    <input id=password autofocus type='text' pattern="\d*" maxlength='4' id="password">
+    <input id=inputpwbt type="button" onclick="test()" value="들어가기">
+    <div id="a">식물원<a href="식물원2.html" class="one"><img src="왼화.png" width="100" height="100"></a></div>
+    <div id="c"><img src="pipe.png" width="400" onclick="pipefu()"></div>
+    <div id="b"><img src="safari.png" width="1600" height="740"></div>
+    <div id="e"><img src="safarino.png" width="1600" height="740"></div>
+    <input id=restart type="button" onclick="location.href='사파리.html'" value="다시하기">
+    <div id="f"><img src="dark.png" width="1600" height="740"></div>	
+</body>
 <script>
+    let t =0
+    let p = 0
     let pipe = 0
-    function pipe() {
+    function pipefu() {
         pipe= 1
         localStorage.setItem('pipe', pipe);
     }
+    function test() {
+        var p = document.getElementById('password').value;
+        if (p === '1373') { // 비번
+            document.getElementById("c").style.display = "block";
+            document.getElementById("b").style.display = "none";
+            document.getElementById("e").style.display = "block";
+        } else {
+            jumps();
+        }
+    }
+let audio2;
+
+function music() {
+    if (!audio2) {
+        audio2 = new Audio("fuzzy-jumpscare-80560.mp3");
+        audio2.loop = true;
+        audio2.volume = 0.7;
+        audio2.playbackRate = 1.3;
+    }
+
+    audio2.play().catch(function(error) {
+        console.log('Audio playback failed:', error);
+    });
+    setTimeout(() => {
+        if (audio2) audio2.pause();
+    }, 3000);
+}
+
+function jumps() {
+    music();
+    document.getElementById("jumps").style.display = "block";
+    document.getElementById("password").style.display = "none";
+    document.getElementById("inputpwbt").style.display = "none";
+    document.getElementById("restart").style.display = "block";
+    document.getElementById("e").style.display = "block";
+    document.getElementById("b").style.display = "none";
+}
+
 </script>
-<body>
-    <div id="a">식물원<a href="식물원2.html" class="one"><img src="왼화.png" width="100" height="100"></a></div>
-    <!-- <div id="b"><img src="사파리사진" width="1600" height="740"></div> -->
-    <div><img src="pipe.png" width="100" onclick="pipe()"></div>
-</body>
 </html>

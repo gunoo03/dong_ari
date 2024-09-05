@@ -8,7 +8,7 @@
         #a{
             position: fixed;
             left: 370px;
-            top: 300px; /*아이템1 위치 지정*/
+            top: 250px; /*아이템1 위치 지정*/
         }
         #b{
             position: fixed;
@@ -17,12 +17,12 @@
         }
         #c{
             position: fixed;
-            left: 1000px;
-            top: 500px; /*아이템2 위치 지정*/
+            left: 1100px;
+            top: 450px; /*아이템2 위치 지정*/
         }
         #d{
             position: fixed;
-            left: 1000px;
+            left: 1050px;
             top: 280px; /*자물쇠 위치 지정*/
         }
         #e{
@@ -34,6 +34,8 @@
             position: fixed;
             left: 0px;
             top: 0px; /*어둠 위치 지정*/
+            z-index: 10;
+            pointer-events: none;
         }
         
     </style>
@@ -58,11 +60,11 @@
 </script>
 <body>
     <div id="b"><img src="back.png" width="1600" height="740"></div> 
-    <div id="a"><img src="item.jpg" width="30" height="30" onclick="book()"></div> 
-    <div id="c"><img src="item.jpg" width="30" height="30" onclick="box()"></div>
-    <div id="d" style ="display:none"><a href="복도.html"><img src="item.png" width="30" height="30"></a></div>
+    <div id="a"><img src="light.png" width="30" height="30" onclick="book()"></div> 
+    <div id="c"><img src="light.png" width="30" height="30" onclick="box()"></div>
+    <div id="d" style ="display:none"><a href="복도.html"><img src="lock.png" width="30" height="30"></a></div>
     <div id="e" style ="display:none"><img src="note.png" width="500" height="600" onclick="problembook()"></div>
-    <!-- <div id="f"><img src="dark.png" width="1600" height="740"></div> -->	
+    <div id="f"><img src="dark.png" width="1600" height="740"></div>	
     <audio src="https://youtu.be/uqWbmCvZ2Ws?si=kiZL25ENqR_uPaoN" hidden loop></audio>
 </body>
 </html>

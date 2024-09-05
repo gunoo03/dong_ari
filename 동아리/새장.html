@@ -12,26 +12,26 @@
         }
         #iron2{
             position: absolute;
-            left: 600px;
-            top: 210px;
+            left: 650px;
+            top: 190px;
              /*철창2위치*/
         }
         #iron1{
             position: absolute;
-            left: 250px;
-            top: 210px;
+            left: 350px;
+            top: 190px;
              /*철창3위치*/
         }
         #iron3{
             position: absolute;
             left: 950px;
-            top: 210px;
+            top: 190px;
              /*철창1위치*/
         }
         #iron4{
             position: absolute;
-            left: 250px;
-            top: 510px;
+            left: 275px;
+            top: 370px;
              /*철창1위치*/
         }
         #c{
@@ -39,21 +39,37 @@
             left: 1350px;
             top: 300px; /*오른화 위치 지정*/
         }
+        #k{
+            position: absolute;
+            left: 120px;
+            top: -3px;
+        }
         .one img {
             transition: all 0.2s linear;
         }
         .one:hover img {
             transform: scale(1.1);
         }
+        #f{
+            position: fixed;
+            left: 0px;
+            top: 0px; /*어둠 위치 지정*/
+            z-index: 10;
+            pointer-events: none;
+        }
+        .k:hover{
+            box-shadow: 0px 0px 5px 4px green;
+        }
     </style>
 </head>
 <body>
-    <div id="b"><img src="back.png" width="1600" height="740"></div>
-    <div id=iron3><img src="철창.png" width="200px" onclick="iron3()"></div>
-    <div id=iron2><img src="철창.png" width="200px" onclick="iron2()"></div>
-    <div id=iron1><img src="철창.png" width="200px" onclick="iron1()"></div>
-    <div id=iron4><img src="철창.png" width="1000px" height="200px" onclick="hiddenend()"></div>
-    <div id="c">식물원<a href="식물원2.html" class="one"><img src="오른화.png" width="100" height="100"></a></div>
+    <div id="b"><img src="birdroom.png" width="1600" height="740"></div>
+    <div id=iron3>연두색<img src="cage.png" width="200px" onclick="iron3()"></div>
+    <div id=iron2>보라색<img src="cage.png" width="200px" onclick="iron2()"></div>
+    <div id=iron1>황토색<img src="cage.png" width="200px" onclick="iron1()"></div>
+    <div id=iron4>검은색/흰색/회색<div class="k" id ="k"><img src="cage.png" width="800px" height="150px" onclick="hiddenend()"></div></div>
+    <div id="f"><img src="dark.png" width="1600" height="740"></div>	
+    <div id="c"><span style="color: black;">식물원</span><a href="식물원2.html" class="one"><img src="오른화.png" width="100" height="100"></a></div>
 </body>
 <script>
     let water = localStorage.getItem('bottle')
@@ -61,31 +77,32 @@
     let hiddenbv = 0
     let hiddenwv = 0
     function iron1() {
-        if(water === '흰빨노') {
-            alert("1")
+        if(water === '갈') {
+            alert("7이써진 종이를 얻었다.(외워두시는걸 추천드립니다.)")
         }
-        else {
-
+        else{
+            alert("잠겨있다.")
         }
     }
     function iron2() {
-        if (water === '빨파') {
-            alert("2")
+        if (water === '보') {
+            alert("아무것도 없었다.")
         }
-        else {
-
+        else{
+            alert("잠겨있다.")
         }
     }
     function iron3() {
-        if (water === '흰파노') {
+        if (water === '연두') {
             localStorage.setItem('antidote', 1);
+            alert("해독제를 얻었다.")
         }
-        else {
-
+        else{
+            alert("잠겨있다.")
         }
     }
     function hiddenend() {
-        if (water === '흰빨파노') {
+        if (water === '회') {
             hiddengv = 1;
             localStorage.setItem('gray', hiddengv);
         }
@@ -93,16 +110,22 @@
             hiddenwv = 1;
             localStorage.setItem('white', hiddenwv);
         }
-        if(water === "빨파노") {
+        if(water === "검") {
             hiddenbv = 1;
             localStorage.setItem('black', hiddenbv);
         }
+        else{
+            alert("잠겨있다.")
+        }
     }
-    let gray = localStorage.getItem('grat');
+    let gray = localStorage.getItem('gray');
     let white = localStorage.getItem('white');
     let black = localStorage.getItem('black');
     if (white === "1" && gray === "1" && black === "1") {
             window.location.replace('히든엔딩.html');
         }
+    function color() {
+        console.log(localStorage.getItem('bottle'));
+    }
 </script>
 </html>
